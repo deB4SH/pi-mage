@@ -48,5 +48,8 @@ RUN printf '#!/bin/sh\n\
 WORKDIR /workspace
 USER worker
 
+# install popular litellm proxy
+RUN pi install npm:pi-provider-litellm
+
 ENTRYPOINT ["pi"]
 CMD []
