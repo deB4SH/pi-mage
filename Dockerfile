@@ -1,5 +1,5 @@
 ARG REPOSITORY="docker.io"
-FROM ${REPOSITORY}/library/debian:bookworm-20260824-slim
+FROM ${REPOSITORY}/library/debian:forky-20260824-slim
 # install dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
