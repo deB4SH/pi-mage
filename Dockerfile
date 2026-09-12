@@ -12,6 +12,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-dev \
     nodejs \
     npm \
+    fd-find \
+    ripgrep \
     && rm -rf /var/lib/apt/lists/*
 # remove commands that could lead to a privilege escalation
 RUN rm -f /bin/su /usr/bin/su /bin/mount /usr/bin/mount /bin/umount /usr/bin/umount \
