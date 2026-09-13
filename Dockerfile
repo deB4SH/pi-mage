@@ -30,11 +30,13 @@ RUN npm install -g @earendil-works/pi-coding-agent
 RUN mkdir -p /home/worker/.pi/agent \
     /workspace \
     /home/worker/.config \
-    /home/worker/.npm && \
-    chown -R worker:worker /home/worker/.pi \
+    /home/worker/.npm  \
+    && chown -R worker:worker /home/worker/.pi \
     /workspace \
     /home/worker/.config \
     /home/worker/.npm
+
+RUN ls -al /
 # remove possible leaking vars from git commands
 RUN printf '#!/bin/sh\n\
     unset GIT_TRACE\n\
@@ -52,6 +54,7 @@ USER worker
 
 # install popular litellm proxy
 RUN pi install npm:pi-provider-litellm
+RUN pi install npm:pi-plan
 
 ENTRYPOINT ["pi"]
 CMD []
