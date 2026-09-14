@@ -52,7 +52,7 @@ RUN printf '#!/bin/sh\n\
 WORKDIR /workspace
 USER worker
 
-# install popular litellm proxy
+# install popular litellm proxy and friends
 RUN pi install npm:pi-provider-litellm
 RUN pi install npm:@janvitos/pi-plan-build
 
