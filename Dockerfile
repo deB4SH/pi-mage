@@ -55,6 +55,7 @@ USER worker
 # install popular litellm proxy and friends
 RUN pi install npm:pi-provider-litellm
 RUN pi install npm:@janvitos/pi-plan-build
+RUN pi install npm:pi-session-hub
 
 ENTRYPOINT ["pi"]
 CMD []
