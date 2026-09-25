@@ -53,9 +53,13 @@ WORKDIR /workspace
 USER worker
 
 # install popular litellm proxy and friends
-RUN pi install npm:pi-provider-litellm
-RUN pi install npm:@janvitos/pi-plan-build
-RUN pi install npm:pi-session-hub
+RUN pi install npm:pi-provider-litellm \
+    #What does this: Plan safely, approve explicitly, then implement here or in a clean session.
+    && pi install npm:@janvitos/pi-plan-build \
+    #What does this: Let the model ask you instead of guessing.
+    && pi install npm:@juicesharp/rpiv-ask-user-question \
+    #What does this: Let the model answer from the live web instead of its training data.
+    && pi install npm:@juicesharp/rpiv-web-tools
 
 ENTRYPOINT ["pi"]
 CMD []
