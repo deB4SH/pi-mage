@@ -8,7 +8,7 @@ on:
 
 jobs:
   package-and-deploy:
-    uses: Public-Actions/docker-build-and-publish/.gitea/workflows/build.yml@release/1.0.4
+    uses: Public-Actions/docker-build-and-publish/.gitea/workflows/build.yml@release/1.0.5
     secrets: inherit
     with:
       docker_org: ${{ secrets.DR_REGISTRY }}
